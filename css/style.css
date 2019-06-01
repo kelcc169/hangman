@@ -1,0 +1,15 @@
+header, main, footer {
+    width: 70%;
+    border: 1px dashed hotpink;
+    margin: auto;
+    text-align: center;
+}
+
+div {
+    border: 1px solid lightseagreen;
+    margin: auto;
+}
+
+.box {
+    height: 75px;
+}

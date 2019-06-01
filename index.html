@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Hangman!</h1>
+        <h2>Prepare to die...</h2>
+    </header>
+    <main>
+        <input type="text" name="input" placeholder="Enter your guess">
+        <button class="">Submit</button>
+        <div class="gallows">
+            <img src="https://fillmurray.com/g/200/300" alt="fill murray" title="filler">
+        </div>
+        <div class="display">
+            <h3 id="word"></h3>
+        </div>
+        <div class="box">
+            <p>Letters Guessed</p>
+            <p id="usedletters"></p>
+        </div>
+    </main>
+    <footer>
+        <p>Thanks for playing!</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
