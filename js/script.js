@@ -9,26 +9,42 @@ var count = 7;
 //HTML element references
 var inputEl = document.querySelector('[name="input"]');
 var pEl = document.getElementById("usedletters");
-var btnEl = document.querySelector("button");
+var btnEl = document.getElementById("submit");
 var wordEl = document.getElementById("word");
+var textEl = 
 
-//functions
+//functions and stuff
+
+function startGame() {
+    //set text to
+}
+
+
+arr1.forEach(function(letter) {
+    correctArr.push('_');
+});
+console.log(correctArr);
+
+
 //var correctness
 function correctness(str) {
-    var textInput = inputEl.value;
-    var rightLetter = '';
-    for (var i = 0; i < str.length; i++) {
-        if (arr1.includes(str[i]) ) {
-            //a function for changing a dash to a letter
-            rightLetter += str[i];
-            wordEl.textContent =  rightLetter;
+    //start of check
+        if (arr1.includes(str)) {    
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1[i] === str) {
+                correctArr[i] = str;
+                wordEl.textContent =  correctArr.join('   ');
+                }
+            }
         } else {
             count = count - 1;
-            inputString = inputString + "  " + textInput;
+            if (count === 0) {
+                console.log("you lose")
+            }
+            inputString = inputString + "    " + str;
             pEl.textContent = inputString;
-        }
-        return rightLetter
-    };
+        };
+    //end of check function
 };
     //var I'mcorrectFunction
 
@@ -40,19 +56,8 @@ function correctness(str) {
 btnEl.addEventListener("click", function(t) {    
     var textInput = inputEl.value;
     correctness(textInput)
-    //next line is part of incorrect
-    //do me no matter what
     inputEl.value = '';
 });
 //any additional function to make it work
 
-// var arr2 = [];
-
-// arr1.forEach(function (letter) {
-//     // arr2.push("_");
-        
-
-// });
-
-// console.log(arr2);
-//make a switch for images + count!
+// addEventListener("")

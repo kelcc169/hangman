@@ -11,19 +11,18 @@
 <body>
     <header>
         <h1>Welcome to Hangman!</h1>
-        <h2>Prepare to die...</h2>
     </header>
     <main>
         <input type="text" name="input" placeholder="Enter your guess">
-        <button class="">Submit</button>
+        <button id="submit">Submit</button>
         <div class="gallows">
             <img src="https://fillmurray.com/g/200/300" alt="fill murray" title="filler">
         </div>
         <div class="display">
-            <h3 id="word"></h3>
+            <p id="word"></p>
         </div>
         <div class="box">
-            <p>Letters Guessed</p>
+            <p>Incorrect Guesses</p>
             <p id="usedletters"></p>
         </div>
     </main>

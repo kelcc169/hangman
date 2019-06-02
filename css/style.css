@@ -1,15 +1,23 @@
 header, main, footer {
     width: 70%;
-    border: 1px dashed hotpink;
+    /* border: 1px dashed hotpink; */
     margin: auto;
     text-align: center;
 }
 
 div {
-    border: 1px solid lightseagreen;
+    /* border: 1px solid lightseagreen; */
     margin: auto;
 }
 
+.display {
+    height: 75px;
+}
 .box {
     height: 75px;
+    font-size: 18px;
+}
+
+#word {
+    font-size: 24px;
 }
