@@ -11,6 +11,8 @@ var pEl = document.getElementById("usedletters");
 var wordEl = document.getElementById("word");
 var btnEl = document.getElementById("submit");
 var startEl = document.getElementById("start");
+var sadEl = document.getElementById("sadface");
+var nooseEl = document.getElementById("noose");
 
 
 function startGame() {
@@ -24,51 +26,60 @@ function startGame() {
     count = 7; 
     parts.forEach(function (part) {
         document.getElementById(part).style.border = "transparent";
-        document.getElementById("sadface").textContent = ":(";
-        document.getElementById("sadface").style.color = "transparent";
-        document.getElementById("noose").style.border = "";
     });
+    sadEl.textContent = ":(";
+    sadEl.style.color = "transparent";
+    nooseEl.style.border = "";
     textEl.value = '';
     inputString= '';
+    pEl.textContent = '';
 }
 
 function checkCorrect(str) {
-    if (arr1.includes(str)) {    
-        for (var i = 0; i < arr1.length; i++) {
-            if (arr1[i] === str) {
-            correctArr[i] = str;
-            wordEl.textContent =  correctArr.join('   ');
-            }
-        }
+    if (pEl.textContent.includes(str)) {
+        console.log(str);
     } else {
-        count = count - 1;
-        if (count === 0) {
-            document.getElementById("sadface").style.color = "black"
-            wordEl.textContent = "You Lose!";
+        if (arr1.includes(str)) {    
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1[i] === str) {
+                correctArr[i] = str;
+                wordEl.textContent =  correctArr.join('   ');
+                }
+            }
         } else {
-        document.getElementById(parts[count - 1]).style.border = "1px solid black";
-        inputString = inputString + "    " + str;
-        pEl.textContent = inputString;
-        }
-    };
+            count = count - 1;
+            if (count === 0) {
+                sadEl.style.color = "black"
+                pEl.textContent = "You Lose!";
+                wordEl.textContent = text;
+            } else {
+            document.getElementById(parts[count - 1]).style.border = "1px solid black";
+            inputString = inputString + "    " + str;
+            pEl.textContent = inputString;
+            }
+        };
+    }
 };
+
+function win () {
+    if (correctArr.join('') === text) {
+        parts.forEach(function(part) {
+            document.getElementById(part).style.border = "1px solid black";
+        });
+        nooseEl.style.border = "transparent";
+        sadEl.textContent = ":D";
+        sadEl.style.color = "black";
+        pEl.textContent = "You Win!";
+    }
+};
+
 
 btnEl.addEventListener("click", function(t) {    
     var textInput = inputEl.value;
     checkCorrect(textInput)
     inputEl.value = '';
-    if (correctArr.join('') === text) {
-        parts.forEach(function(part) {
-            document.getElementById(part).style.border = "1px solid black";
-        });
-        document.getElementById("noose").style.border = "transparent";
-        document.getElementById("sadface").textContent = ":D";
-        document.getElementById("sadface").style.color = "black";
-        pEl.textContent = "You Win!";
-    }
+    win();
 });
 
 startEl.addEventListener("click", startGame);
 
-//let repeat guesses not count as negatives
-//disable submit button when game is over, win or lose
