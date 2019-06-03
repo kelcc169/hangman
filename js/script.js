@@ -24,11 +24,11 @@ function startGame() {
     count = 7; 
     parts.forEach(function (part) {
         document.getElementById(part).style.border = "transparent";
-        document.getElementById(part).style.color = "transparent";
     });
     textEl.value = '';
     pEl.value = [];
     document.getElementById("sadface").innerHTML = ":(";
+    document.getElementById("sadface").style.color = "transparent";
 }
 
 function correctness(str) {
