@@ -37,7 +37,7 @@ function startGame() {
 
 function checkCorrect(str) {
     if (pEl.textContent.includes(str)) {
-        console.log(str);
+        return
     } else {
         if (arr1.includes(str)) {    
             for (var i = 0; i < arr1.length; i++) {
