@@ -26,7 +26,7 @@ function startGame() {
         document.getElementById(part).style.border = "transparent";
     });
     textEl.value = '';
-    pEl.value = [];
+    pEl.textContent = [];
     document.getElementById("sadface").innerHTML = ":(";
     document.getElementById("sadface").style.color = "transparent";
 }
