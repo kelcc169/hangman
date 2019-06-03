@@ -1,6 +1,7 @@
 header, main, footer {
     margin: auto;
     text-align: center;
+    font-family: 'Righteous', cursive;
 }
 
 body {
