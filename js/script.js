@@ -54,7 +54,9 @@ function correctness(str) {
 };
 
 function hangman() {
-    
+    //if !correctArr.includes('_'), you win!
+    //or else, if count reaches 0 you lose!
+    // for pictures, access based on count?
 }
 //create all event listeners (most stuff will be here)
 btnEl.addEventListener("click", function(t) {    
