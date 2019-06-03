@@ -24,47 +24,55 @@ function startGame() {
     count = 7; 
     parts.forEach(function (part) {
         document.getElementById(part).style.border = "transparent";
+        document.getElementById("sadface").textContent = ":(";
+        document.getElementById("sadface").style.color = "transparent";
+        document.getElementById("noose").style.border = "";
     });
     textEl.value = '';
     pEl.textContent = [];
-    document.getElementById("sadface").innerHTML = ":(";
-    document.getElementById("sadface").style.color = "transparent";
 }
 
-function correctness(str) {
-    if (arr1.includes(str)) {    
-        for (var i = 0; i < arr1.length; i++) {
-            if (arr1[i] === str) {
-            correctArr[i] = str;
-            wordEl.textContent =  correctArr.join('   ');
+function checkCorrect(str) {
+    if (inputString.includes(str)) {
+        console.log(str)
+    } else {
+        if (arr1.includes(str)) {    
+            for (var i = 0; i < arr1.length; i++) {
+                if (arr1[i] === str) {
+                correctArr[i] = str;
+                wordEl.textContent =  correctArr.join('   ');
+                }
+            }
+        } else {
+            count = count - 1;
+            if (count === 0) {
+                document.getElementById("sadface").style.color = "black"
+                wordEl.textContent = "You Lose!";
+            } else {
+            document.getElementById(parts[count - 1]).style.border = "1px solid black";
+            inputString = inputString + "    " + str;
+            pEl.textContent = inputString;
             }
         }
-    } else {
-        count = count - 1;
-        if (count === 0) {
-            document.getElementById("sadface").style.color = "black"
-            wordEl.textContent = "You Lose!";
-        } else {
-        document.getElementById(parts[count - 1]).style.border = "1px solid black";
-        inputString = inputString + "    " + str;
-        pEl.textContent = inputString;
-        }
-    };
+    }   
 };
 
 btnEl.addEventListener("click", function(t) {    
     var textInput = inputEl.value;
-    correctness(textInput)
+    checkCorrect(textInput)
     inputEl.value = '';
     if (correctArr.join('') === text) {
         parts.forEach(function(part) {
             document.getElementById(part).style.border = "1px solid black";
         });
         document.getElementById("noose").style.border = "transparent";
-        document.getElementById("sadface").innerHTML = ":D";
+        document.getElementById("sadface").textContent = ":D";
         document.getElementById("sadface").style.color = "black";
         pEl.textContent = "You Win!";
     }
 });
 
 startEl.addEventListener("click", startGame);
+
+
+//disable submit button when game is over, win or lose

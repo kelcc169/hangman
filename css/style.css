@@ -42,9 +42,9 @@ header {
 .leftarm {
     height: 50px;
     border-left: 3px transparent black;
+    position: relative;
     display: inline-block;
     transform: rotate(320deg);
-    position: relative;
     left: -10px;
     bottom: 50px;
 }
@@ -52,9 +52,9 @@ header {
 .rightarm {
     height: 50px;
     border-left: 3px transparent black;
+    position: relative;
     display: inline-block;
     transform: rotate(40deg);
-    position: relative;
     left: 18px;
     bottom: 50px;
 }
@@ -62,9 +62,9 @@ header {
 .leftleg {
     height: 50px;
     border-left: 3px transparent black;
+    position: relative;
     display: inline-block;
     transform: rotate(40deg);
-    position: relative;
     left: -22px;
     top: 57px;
 }
@@ -72,9 +72,9 @@ header {
 .rightleg {
     height: 50px;
     border-left: 3px transparent black;
+    position: relative;
     display: inline-block;
     transform: rotate(320deg);
-    position: relative;
     left: 5px;
     top: 57px;
 }
