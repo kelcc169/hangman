@@ -29,32 +29,28 @@ function startGame() {
         document.getElementById("noose").style.border = "";
     });
     textEl.value = '';
-    pEl.textContent = [];
+    inputString= '';
 }
 
 function checkCorrect(str) {
-    if (inputString.includes(str)) {
-        console.log(str)
-    } else {
-        if (arr1.includes(str)) {    
-            for (var i = 0; i < arr1.length; i++) {
-                if (arr1[i] === str) {
-                correctArr[i] = str;
-                wordEl.textContent =  correctArr.join('   ');
-                }
-            }
-        } else {
-            count = count - 1;
-            if (count === 0) {
-                document.getElementById("sadface").style.color = "black"
-                wordEl.textContent = "You Lose!";
-            } else {
-            document.getElementById(parts[count - 1]).style.border = "1px solid black";
-            inputString = inputString + "    " + str;
-            pEl.textContent = inputString;
+    if (arr1.includes(str)) {    
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i] === str) {
+            correctArr[i] = str;
+            wordEl.textContent =  correctArr.join('   ');
             }
         }
-    }   
+    } else {
+        count = count - 1;
+        if (count === 0) {
+            document.getElementById("sadface").style.color = "black"
+            wordEl.textContent = "You Lose!";
+        } else {
+        document.getElementById(parts[count - 1]).style.border = "1px solid black";
+        inputString = inputString + "    " + str;
+        pEl.textContent = inputString;
+        }
+    };
 };
 
 btnEl.addEventListener("click", function(t) {    
@@ -74,5 +70,5 @@ btnEl.addEventListener("click", function(t) {
 
 startEl.addEventListener("click", startGame);
 
-
+//let repeat guesses not count as negatives
 //disable submit button when game is over, win or lose
